@@ -41,12 +41,58 @@
             }
             Console.WriteLine("A tömbben található negatív számok darabszáma: " + db);
         }
+        static void EldontesTetele()
+        {
+            int i =0;
+            while (i < tomb.Length && tomb[i] != 0) 
+            {
+                i++;
+            }
+            if (i < tomb.Length)
+            {
+                Console.WriteLine("A tömbben található Nulla.");
+            }
+            else
+            {
+                Console.WriteLine("A tömbben NEM található Nulla.");
+            }
+        }
 
+        static void KeresesTetele()
+        {
+            int keresett = 0;
+            int i = 0;
+            while (i < tomb.Length && tomb[i] != keresett) 
+            {
+                i++; 
+            }
+            if (i < tomb.Length)
+            {
+                Console.WriteLine("A tömbben található a keresett szám: " + keresett);
+            }
+            else
+            {
+                Console.WriteLine("A tömbben NEM található a keresett szám: " + keresett);
+            }
+        }
+        static void KivalasztasTetele()
+        {
+            tomb[8] = 10;
+            int i = 0;
+            while (tomb[i] != 10)
+            {
+                i++;
+            }
+            Console.WriteLine($"A keresett szám az {i + 1}. helyen található.");
+        }
         static void Main(string[] args)
         {
             Feltolt(); 
             OsszegzesTetele();
             MegszamolasTetele();
+            EldontesTetele();
+            KeresesTetele();
+            KivalasztasTetele();
         }
     }
 }
